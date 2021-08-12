@@ -11,6 +11,10 @@ export default {
   },
   props: {
     max: Number,
+    accept: {
+        type: String,
+        default: 'image/*'
+    },    
     uploadMsg: String,
     maxError: String,
     fileError: String,
@@ -120,7 +124,7 @@ export default {
       <input
         type="file"
         style="z-index: 1"
-        accept="image/*"
+        :accept="$props.accept"
         ref="uploadInput"
         @change="previewImgs"
         multiple
